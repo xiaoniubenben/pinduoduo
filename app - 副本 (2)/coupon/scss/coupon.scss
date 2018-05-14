@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "normalize.scss";
+@import "iconfont.scss";
+
+$col6:#666;
+$font:#3a3a3a;
+$gray:#a4a3a3;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#e5e5e5;
+
+body{
+-webkit-user-select:none;
+-moz-user-select:none; 
+-ms-user-select:none; 
+user-select:none;
+background-color: white;
+}
+
+.coupon{
+  padding-top: pxTorem(64px);
+  @include box-sizing(border-box);
+  //顶部
+  .cp-top{
+    height: pxTorem(64px);
+    line-height: pxTorem(64px);
+    width: 100%;
+    padding: 0 pxTorem(20px);
+    position: fixed;
+    top:0;left: 0;
+    text-align: center;
+    border-bottom: 1px solid #e2e2e2;
+    @include box-sizing(border-box);
+    background-color: #f8f8f8;
+    z-index: 10;
+    span{
+      font-size: pxTorem(32px);
+      color: #020202;
+    }
+    .cp-topLeft{
+      position: absolute;
+      left: pxTorem(20px);
+      top:0;
+      i{
+        font-size: pxTorem(36px);
+        color: $font;
+        line-height: pxTorem(64px);
+      }
+    }
+    .cp-topRight{
+      position: absolute;
+      top:50%;
+      transform: translateY(- 50%);
+      right:pxTorem(20px);
+      i{
+        display: block;
+        float: left;
+        margin-left: pxTorem(6px);
+        line-height: 1;
+        width: pxTorem(6px);
+        height: pxTorem(6px);
+        background-color: $font;
+        @include border-radius(50%);
+      }
+      i:nth-child(2){
+        margin-top: - pxTorem(2px);
+        width: pxTorem(10px);
+        height: pxTorem(10px);
+      }
+    }
+  }
+
+  //优惠券
+  .cp-con{
+    text-align: center;
+    margin-top: pxTorem(30px);
+    i{
+      font-size: pxTorem(60px);
+    }
+    p{
+      font-size: pxTorem(24px);
+      color: #646464;
+      line-height: pxTorem(60px);
+    }
+    span{
+      font-size: pxTorem(18px);
+      color: #9f9f9f;
+    }
+  }
+}

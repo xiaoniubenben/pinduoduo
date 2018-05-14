@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "normalize.scss";
+@import "iconfont.scss";
+
+$col6:#666;
+$font:#3a3a3a;
+$gray:#a4a3a3;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#e5e5e5;
+
+body{
+-webkit-user-select:none;
+-moz-user-select:none; 
+-ms-user-select:none; 
+user-select:none;
+background-color: white;
+}
+
+.mine{
+  padding-top: pxTorem(64px);
+  @include box-sizing(border-box);
+  background-color: #f2f2f2;
+  //顶部
+  .m-top{
+    height: pxTorem(64px);
+    line-height: pxTorem(64px);
+    width: 100%;
+    padding: 0 pxTorem(20px);
+    position: fixed;
+    top:0;left: 0;
+    text-align: center;
+    @include box-sizing(border-box);
+    background-color: #f8f8f8;
+    z-index: 10;
+    span{
+      font-size: pxTorem(32px);
+      color: #020202;
+    }
+    .m-topLeft{
+      position: absolute;
+      left: pxTorem(20px);
+      top:0;
+      i{
+        font-size: pxTorem(36px);
+        color: $font;
+        line-height: pxTorem(64px);
+      }
+    }
+    .m-topRight{
+      position: absolute;
+      top:50%;
+      transform: translateY(- 50%);
+      right:pxTorem(20px);
+      i{
+        display: block;
+        float: left;
+        margin-left: pxTorem(6px);
+        line-height: 1;
+        width: pxTorem(6px);
+        height: pxTorem(6px);
+        background-color: $font;
+        @include border-radius(50%);
+      }
+      i:nth-child(2){
+        margin-top: - pxTorem(2px);
+        width: pxTorem(10px);
+        height: pxTorem(10px);
+      }
+    }
+  }
+
+  //我的
+  .m-portrait{
+    height: pxTorem(266px);
+    width: 100%;
+    background-image: url("../image/fang.png");
+    background-size: cover;
+    padding-left: pxTorem(68px);
+    position: relative;
+    @include box-sizing(border-box);
+    div{
+      position: absolute;
+      top:50%;
+      transform: translateY(- 50%);
+    }
+    img{
+      display: inline-block;
+      width: pxTorem(102px);
+      height: pxTorem(102px);
+      @include border-radius(50%);
+      vertical-align: middle;
+      margin-right: pxTorem(10px);
+    }
+    span{
+      vertical-align: middle;
+      color: white;
+      font-size: pxTorem(24px);
+      line-height: pxTorem(35px);
+    }
+  }
+
+  //余额
+  .m-money{
+    height: pxTorem(115px);
+    background-color: white;
+    ul{
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      li{
+        flex: 1;
+        a{
+          text-decoration: none;
+          text-align: center;
+          display: block;
+          border-right: 1px solid $bac;
+          color: $font;
+          font-size: pxTorem(28px);
+          p{
+            line-height: 1;
+            margin-bottom: pxTorem(15px);
+          }
+          span{
+            color: $red;
+            line-height: 1;
+          }
+        }
+      }
+    }
+  }
+
+  //其他
+  .m-other{
+    margin-top: pxTorem(14px);
+    padding: 0 pxTorem(20px);
+    @include box-sizing(border-box);
+    background-color: white;
+    li{
+      height: pxTorem(78px);
+      line-height: pxTorem(78px);
+      border-bottom: 1px solid $bac;
+      @include box-sizing(border-box);
+      a{
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: $font;
+        font-size: pxTorem(28px);
+      }
+      i:first-child{
+        font-size: pxTorem(30px);
+        margin-left:pxTorem(20px);
+        margin-right:pxTorem(10px);
+      }
+      i.icon-dingdansvg{
+        font-size: pxTorem(26px);
+        margin-right:pxTorem(12px);
+      }
+      .icon-arrow-right{
+        font-size: pxTorem(26px);
+        float: right;
+      }
+    }
+  }
+}

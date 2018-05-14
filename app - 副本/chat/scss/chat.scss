@@ -1,0 +1,349 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "normalize.scss";
+@import "iconfont.scss";
+
+$col6:#666;
+$font:#3a3a3a;
+$gray:#a4a3a3;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#e5e5e5;
+
+body{
+-webkit-user-select:none;
+-moz-user-select:none; 
+-ms-user-select:none; 
+user-select:none;
+background-color: #ebebeb;
+}
+
+.chat{
+  padding-top: pxTorem(64px);
+  padding-bottom: pxTorem(220px);
+  @include box-sizing(border-box);
+  background-color: #ebebeb;
+  //顶部
+  .c-top{
+    height: pxTorem(64px);
+    line-height: pxTorem(64px);
+    width: 100%;
+    padding: 0 pxTorem(20px);
+    position: fixed;
+    top:0;left: 0;
+    text-align: center;
+    @include box-sizing(border-box);
+    z-index: 10;
+    background-color: #f8f8f8;
+    span{
+      font-size: pxTorem(32px);
+      color: #020202;
+    }
+    .c-topLeft{
+      float: left;
+      i{
+        font-size: pxTorem(26px);
+        color: $font;
+      }
+    }
+    .c-topRight{
+      position: absolute;
+      top:50%;
+      transform: translateY(- 50%);
+      right:pxTorem(20px);
+      i{
+        display: block;
+        float: left;
+        margin-left: pxTorem(6px);
+        line-height: 1;
+        width: pxTorem(6px);
+        height: pxTorem(6px);
+        background-color: $font;
+        @include border-radius(50%);
+      }
+      i:nth-child(2){
+        margin-top: - pxTorem(2px);
+        width: pxTorem(10px);
+        height: pxTorem(10px);
+      }
+    }
+  }
+
+  //聊天
+  .c-chatBox{
+    padding: 0 pxTorem(20px);
+    @include box-sizing(border-box);
+    background-color: #ebebeb;
+    //客服
+    .c-service{
+      padding-top: pxTorem(30px);
+      overflow: hidden;
+      &>img{
+        float: left;
+        width: pxTorem(68px);
+        height: pxTorem(68px);
+        @include border-radius(pxTorem(6px));
+      }
+      .c-chatCont{
+        margin-left: pxTorem(88px);
+        background-color: white;
+        border: 1px solid $gray;
+        max-width: pxTorem(530px);
+        @include border-radius(pxTorem(6px));
+        position: relative;
+        p{
+          font-size: pxTorem(24px);
+          padding:pxTorem(16px) pxTorem(22px);
+          color: #333;
+          line-height: pxTorem(35px);
+          @include box-sizing(border-box);
+        }
+        span{
+          position: absolute;
+          width:0;
+          height: 0;
+          border-bottom:pxTorem(8px) solid transparent;
+          border-top:pxTorem(8px) solid transparent;
+          border-right:pxTorem(10px) solid $gray;
+          float: right;
+          top: pxTorem(20px);
+          left:- pxTorem(10px);
+        }
+        em{
+          position: absolute;
+          top:- pxTorem(8px);
+          right:- pxTorem(12px);
+          width:0;
+          height: 0;
+          border-bottom:pxTorem(8px) solid transparent;
+          border-top:pxTorem(8px) solid transparent;
+          border-right:pxTorem(10px) solid white;
+        }
+
+      }
+    }
+    //顾客发送产品
+    .c-customerThing{
+      padding-top: pxTorem(30px);
+      overflow: hidden;
+      &>img{
+        float: right;
+        width: pxTorem(68px);
+        height: pxTorem(68px);
+        @include border-radius(pxTorem(6px));
+      }
+      .c-thingCont{
+        float: right;
+        margin-right: pxTorem(20px);
+        background-color: white;
+        border: 1px solid $gray;
+        max-width: pxTorem(530px);
+        padding: pxTorem(20px);
+        @include border-radius(pxTorem(6px));
+        @include box-sizing(border-box);
+        position: relative;
+        img{
+          float: left;
+          width: pxTorem(120px);
+          height: pxTorem(120px);
+          border: 1px solid $gray;
+        }
+        div{
+          margin-left: pxTorem(140px);
+          .c-titinfo{
+            display: block;
+            font-size: pxTorem(24px);
+            color: $font;
+            margin-bottom: pxTorem(5px);
+            width: 100%;
+            @include ell;
+          }
+          p{
+            color: $red;
+            font-size: pxTorem(24px);
+            line-height: pxTorem(50px);
+            .c-price{
+              font-size: pxTorem(36px);
+            }
+            .c-person{
+              color: $gray;
+              i{
+                font-style: normal;
+              }
+            }
+          }
+        }
+        //小三角
+        .c-tri{
+          position: absolute;
+          width:0;
+          height: 0;
+          border-bottom:pxTorem(8px) solid transparent;
+          border-top:pxTorem(8px) solid transparent;
+          border-left:pxTorem(10px) solid $gray;
+          float: right;
+          top: pxTorem(20px);
+          right:- pxTorem(10px);
+          em{
+            position: absolute;
+            top:- pxTorem(8px);
+            right: pxTorem(1px);
+            width:0;
+            height: 0;
+            border-bottom:pxTorem(8px) solid transparent;
+            border-top:pxTorem(8px) solid transparent;
+            border-left:pxTorem(10px) solid white;
+          }
+        }
+      }
+    }
+    //顾客聊天
+    .c-customerChat{
+      padding-top: pxTorem(30px);
+      overflow: hidden;
+      &>img{
+        float: right;
+        width: pxTorem(68px);
+        height: pxTorem(68px);
+        @include border-radius(pxTorem(6px));
+      }
+      .c-chatCont{
+        float: right;
+        margin-right: pxTorem(20px);
+        background-color: white;
+        border: 1px solid $gray;
+        max-width: pxTorem(530px);
+        @include border-radius(pxTorem(6px));
+        position: relative;
+        p{
+          font-size: pxTorem(24px);
+          padding:pxTorem(16px) pxTorem(22px);
+          color: #333;
+          line-height: pxTorem(35px);
+          @include box-sizing(border-box);
+        }
+        //小三角
+        .c-tri{
+          position: absolute;
+          width:0;
+          height: 0;
+          border-bottom:pxTorem(8px) solid transparent;
+          border-top:pxTorem(8px) solid transparent;
+          border-left:pxTorem(10px) solid $gray;
+          float: right;
+          top: pxTorem(20px);
+          right:- pxTorem(10px);
+          em{
+            position: absolute;
+            top:- pxTorem(8px);
+            right: pxTorem(1px);
+            width:0;
+            height: 0;
+            border-bottom:pxTorem(8px) solid transparent;
+            border-top:pxTorem(8px) solid transparent;
+            border-left:pxTorem(10px) solid white;
+          }
+        }
+      }
+    }
+  }
+
+  //商品链接
+  .c-things{
+    position: fixed;
+    bottom: 40%;
+    width: 100%;
+    padding: pxTorem(20px);
+    background-color: white;
+    @include box-sizing(border-box);
+    img{
+      width: pxTorem(120px);
+      height: pxTorem(120px);
+      float: left;
+    }
+    div{
+      margin-left: pxTorem(140px);
+      height: pxTorem(120px);
+      position: relative;
+      .c-title{
+        font-size: pxTorem(24px);
+        width: 90%;
+        @include ell;
+        color: $font;
+      }
+      .c-info{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: $red;
+        font-size: pxTorem(24px);
+        line-height: pxTorem(50px);
+        .c-price{
+          font-size: pxTorem(36px);
+        }
+        .c-person{
+          color: $gray;
+          i{
+            font-style: normal;
+          }
+        }
+      }
+      a{
+        position: absolute;
+        line-height: 1;
+        bottom: 0;
+        right: 0;
+        font-size: pxTorem(24px);
+        color: $red;
+        border: 1px solid $red;
+        @include border-radius(pxTorem(24px));
+        padding: pxTorem(10px) pxTorem(25px);
+      }
+    }
+  }
+
+  //输入框
+  .c-input{
+    height: pxTorem(205px);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    border-top: 1px solid $gray;
+    &>div{
+      position: absolute;
+      top:50%;
+      height: pxTorem(76px);
+      line-height: pxTorem(76px);
+      transform: translateY(- 50%);
+      padding: 0 pxTorem(20px);
+      width: 100%;
+      @include box-sizing(border-box);
+      i{
+        font-size: pxTorem(50px);
+        float: right;
+      }
+      div{
+        height: pxTorem(76px);
+        //float: right;
+        overflow: hidden;
+        //width: 100%;
+        padding-right: pxTorem(20px);
+        input{
+          width: 100%;
+          height: 100%;
+          border: 1px solid $gray;
+          background-color: white;
+          @include border-radius(12px);
+          padding: 0 pxTorem(20px);
+          @include box-sizing(border-box);
+          color: $font;
+        }
+      }
+    }
+  }
+}

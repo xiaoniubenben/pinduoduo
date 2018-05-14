@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "normalize.scss";
+@import "iconfont.scss";
+
+$col6:#666;
+$font:#3a3a3a;
+$gray:#a4a3a3;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#e5e5e5;
+
+body{
+-webkit-user-select:none;
+-moz-user-select:none; 
+-ms-user-select:none; 
+user-select:none;
+background-color: white;
+}
+
+.order{
+  padding-top: pxTorem(64px);
+  @include box-sizing(border-box);
+  background-color: #f2f2f2;
+  //顶部
+  .o-top{
+    height: pxTorem(64px);
+    line-height: pxTorem(64px);
+    width: 100%;
+    padding: 0 pxTorem(20px);
+    position: fixed;
+    top:0;left: 0;
+    text-align: center;
+    border-bottom: 1px solid #e2e2e2;
+    @include box-sizing(border-box);
+    background-color: #f8f8f8;
+    z-index: 10;
+    span{
+      font-size: pxTorem(32px);
+      color: #020202;
+    }
+    .o-topLeft{
+      float: left;
+      i{
+        font-size: pxTorem(26px);
+        color: $font;
+      }
+    }
+    .o-topRight{
+      position: absolute;
+      top:50%;
+      transform: translateY(- 50%);
+      right:pxTorem(20px);
+      i{
+        display: block;
+        float: left;
+        margin-left: pxTorem(6px);
+        line-height: 1;
+        width: pxTorem(6px);
+        height: pxTorem(6px);
+        background-color: $font;
+        @include border-radius(50%);
+      }
+      i:nth-child(2){
+        margin-top: - pxTorem(2px);
+        width: pxTorem(10px);
+        height: pxTorem(10px);
+      }
+    }
+  }
+
+  //订单类型
+  .o-list{
+    background-color: white;
+    margin-bottom: pxTorem(14px);
+    ul{
+      overflow: hidden;
+      li{
+        float: left;
+        width: 33.33%;
+        height: pxTorem(100px);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+          //display: block;
+          //width: 100%;
+          //position: absolute;
+          //top:50%;
+          //left: 50%;
+          color: $font;
+          //transform: translate(- 50%,- 50%);
+          text-align: center;
+          line-height: 1;
+          i{
+            display: block;
+            font-size: pxTorem(40px);
+            margin-bottom: pxTorem(6px);
+          }
+        }
+      }
+      .o-listAct{
+        a{
+          color:$red;
+          i{
+            color: $font;
+          }
+        }
+      }
+    }
+  }
+    //清单
+  .o-inventory{
+    background-color: white;
+    padding-top: pxTorem(20px);
+    padding-bottom: pxTorem(20px);
+    margin-bottom: pxTorem(14px);
+    overflow: hidden;
+    .o-intop{
+      padding: 0 pxTorem(20px);
+      @include box-sizing(border-box);
+      background-color: white;
+      span,u{
+        font-style: normal;
+        text-decoration: none;
+        font-size: pxTorem(24px);
+        color: #333;
+      }
+      u{
+        float: right;
+        color: $red;
+      }
+    }
+    //商品
+    .o-things{
+      height: pxTorem(180px);
+      padding: pxTorem(25px) pxTorem(20px);
+      border-bottom: 1px solid $bac;
+      @include box-sizing(border-box);
+      @include box-sizing(border-box);
+      line-height: pxTorem(78px);
+      border-bottom: 1px solid $bac;
+      background-color: white;
+      .o-img{
+        width: pxTorem(134px);
+        height: pxTorem(125px);
+        float: left;
+        line-height: pxTorem(78px);
+        border: 1px solid $gray;
+        img{
+          width: pxTorem(134px);
+          height: pxTorem(125px);
+        }
+      }
+      .o-del{
+        padding-left: pxTorem(160px);
+        @include box-sizing(border-box);
+        height: 100%;
+        p{
+          line-height: 1;
+          margin-top: pxTorem(23px);
+        }
+        span,u,i{
+          font-style: normal;
+          text-decoration: none;
+          font-size: pxTorem(24px);
+          color: gray;
+        }
+        u{
+          float: right;
+        }
+        .o-name{
+          u,span{
+            font-size: pxTorem(28px);
+            color: $font;
+          }
+        }
+      }
+    }
+    //价格
+    .o-price{
+      padding: pxTorem(20px);
+      @include box-sizing(border-box);
+      font-size: pxTorem(24px);
+      color: $font;
+      overflow: hidden;
+      u,i{
+        text-decoration: none;
+        font-style: normal;
+      }
+      i{
+        color: $red;
+      }
+      span{
+        float: right;
+      }
+    }
+    //取消
+    .o-cancel{
+      float: right;
+      padding: pxTorem(18px) pxTorem(24px);
+      color: $font;
+      line-height: 1;
+      font-size: pxTorem(24px);
+      border: 1px solid #3a3a3a;
+      margin-right: pxTorem(20px);
+    }
+  }
+
+  //返回顶部
+  .o-back{
+    position: fixed;
+    //background-color: white;
+    font-size: pxTorem(50px);
+    bottom: pxTorem(180px);
+    right: pxTorem(20px);
+  }
+
+}

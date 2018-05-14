@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "normalize.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "iconfont.scss";
+//@import "iconfont1.scss";
+
+$col6:#666;
+$tit:#454545;
+$borbot:#e1e1e1;
+$font:#333;
+$gray:#dcdcdc;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#f2f2f2;
+$iconbor:#db5463;
+$icon:#fb948b;
+
+body{
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  background-color: white;
+}
+
+.addnewposition{
+  //padding-top: pxTorem(64px);
+  @include box-sizing(border-box);
+  a{
+    text-decoration: none;
+  }
+  ul{
+    li{
+      height: pxTorem(66px);
+      border-bottom: 1px solid $borbot;
+      line-height: pxTorem(66px);
+      font-size: pxTorem(24px);
+      padding: 0 pxTorem(20px);
+      @include box-sizing(border-box);
+      color: $font;
+      input{
+        width: 78%;
+        padding-left: pxTorem(20px);
+        @include box-sizing(border-box);
+      }
+      i{
+        float: right;
+        font-size: pxTorem(20px);
+        color: $gray;
+        margin: 0 pxTorem(10px);
+      }
+      span{
+        float: right;
+        font-size: pxTorem(24px);
+        color: $gray;
+      }
+    }
+  }
+
+
+
+  //取消
+  .an-appr{
+    margin-top: pxTorem(14px);
+    padding: 0 pxTorem(20px);
+    overflow: hidden;
+    background-color: white;
+    @include box-sizing(border-box);
+    textarea{
+      width: 100%;
+      padding: pxTorem(15px) pxTorem(10px);
+      height: pxTorem(175px);
+      border: 1px solid $gray;
+      @include box-sizing(border-box);
+      color: $font;
+    }
+    div{
+      text-align: center;
+      margin-top: pxTorem(100px);
+      button{
+        height: pxTorem(50px);
+        width: pxTorem(188px);
+        text-align: center;
+        line-height: pxTorem(50px);
+        @include border-radius(6px);
+        background-color: #43464f;
+        color: white;
+        font-size: pxTorem(24px);
+      }
+    }
+  }
+}

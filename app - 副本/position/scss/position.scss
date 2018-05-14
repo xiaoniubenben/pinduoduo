@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "normalize.scss";
+@import "iconfont.scss";
+
+$col6:#666;
+$font:#3a3a3a;
+$gray:#a4a3a3;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#e5e5e5;
+
+body{
+-webkit-user-select:none;
+-moz-user-select:none; 
+-ms-user-select:none; 
+user-select:none;
+background-color: white;
+}
+
+.position{
+  padding-top: pxTorem(64px);
+  padding-bottom: pxTorem(50px);
+  @include box-sizing(border-box);
+  background-color: white;
+  //顶部
+  .p-top{
+    height: pxTorem(64px);
+    line-height: pxTorem(64px);
+    width: 100%;
+    padding: 0 pxTorem(20px);
+    position: fixed;
+    top:0;left: 0;
+    text-align: center;
+    @include box-sizing(border-box);
+    background-color: #f8f8f8;
+    z-index: 10;
+    span{
+      font-size: pxTorem(32px);
+      color: #020202;
+    }
+    .p-topLeft{
+      float: left;
+      i{
+        font-size: pxTorem(26px);
+        color: $font;
+      }
+    }
+    .p-topRight{
+      position: absolute;
+      top:50%;
+      transform: translateY(- 50%);
+      right:pxTorem(20px);
+      i{
+        display: block;
+        float: left;
+        margin-left: pxTorem(6px);
+        line-height: 1;
+        width: pxTorem(6px);
+        height: pxTorem(6px);
+        background-color: $font;
+        @include border-radius(50%);
+      }
+      i:nth-child(2){
+        margin-top: - pxTorem(2px);
+        width: pxTorem(10px);
+        height: pxTorem(10px);
+      }
+    }
+  }
+
+  //地址
+  .p-positions{
+    background-color: #f2f2f2;
+    padding-bottom: pxTorem(14px);
+    //这是一项
+    .p-li{
+      background-color: white;
+      margin-bottom: pxTorem(14px);
+      .p-positionTop{
+        padding: pxTorem(20px);
+        border-bottom: 1px solid #dddddd;
+        p{
+          font-size: pxTorem(24px);
+          color: $font;
+          line-height: pxTorem(36px);
+        }
+        .p-name{
+          margin-bottom: pxTorem(10px);
+          span{
+            margin-right: pxTorem(20px);
+          }
+        }
+      }
+      .p-positionBottom{
+        margin-top: pxTorem(14px);
+        padding-bottom: pxTorem(24px);
+        overflow: hidden;
+        padding-right: pxTorem(20px);
+        @include box-sizing(border-box);
+        a{
+          float: right;
+          line-height: 1;
+          padding: pxTorem(10px) pxTorem(25px);
+          border: 1px solid #898989;
+          margin-left: pxTorem(20px);
+          color: $font;
+          font-size: pxTorem(24px);
+        }
+      }
+    }
+    .p-li:last-child{
+      margin-bottom: 0;
+    }
+
+  }
+
+  //添加
+  .p-add{
+    background-color: white;
+    text-align: center;
+    padding-top: pxTorem(100px);
+    button{
+      padding: pxTorem(15px) pxTorem(55px);
+      background-color: #43464f;
+      color: white;
+      font-size: pxTorem(24px);
+      @include border-radius(10px);
+    }
+  }
+}

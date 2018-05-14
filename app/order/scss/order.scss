@@ -1,0 +1,243 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "normalize.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "iconfont.scss";
+@import "iconfont1.scss";
+
+$col6:#666;
+$tit:#454545;
+$borbot:#e1e1e1;
+$font:#333;
+$gray:#dcdcdc;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#f2f2f2;
+$iconbor:#db5463;
+$icon:#fb948b;
+$graytit:#747474;
+
+body{
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  background-color: white;
+}
+
+.order{
+  //padding-top: pxTorem(64px);
+  @include box-sizing(border-box);
+  background-color: $bac;
+  //顶部
+  //.o-top{
+  //  height: pxTorem(64px);
+  //  line-height: pxTorem(64px);
+  //  width: 100%;
+  //  padding: 0 pxTorem(20px);
+  //  position: fixed;
+  //  top:0;left: 0;
+  //  text-align: center;
+  //  border-bottom: 1px solid #e2e2e2;
+  //  @include box-sizing(border-box);
+  //  background-color: #f8f8f8;
+  //  z-index: 10;
+  //  span{
+  //    font-size: pxTorem(32px);
+  //    color: #020202;
+  //  }
+  //  .o-topLeft{
+  //    position: absolute;
+  //    left: pxTorem(20px);
+  //    top:0;
+  //    i{
+  //      font-size: pxTorem(36px);
+  //      color: $font;
+  //      line-height: pxTorem(64px);
+  //    }
+  //  }
+  //  .o-topRight{
+  //    position: absolute;
+  //    top:50%;
+  //    transform: translateY(- 50%);
+  //    right:pxTorem(20px);
+  //    i{
+  //      display: block;
+  //      float: left;
+  //      margin-left: pxTorem(6px);
+  //      line-height: 1;
+  //      width: pxTorem(6px);
+  //      height: pxTorem(6px);
+  //      background-color: $font;
+  //      @include border-radius(50%);
+  //    }
+  //    i:nth-child(2){
+  //      margin-top: - pxTorem(2px);
+  //      width: pxTorem(10px);
+  //      height: pxTorem(10px);
+  //    }
+  //  }
+  //}
+a{
+  text-decoration: none;
+}
+  //订单类型
+  .o-list{
+    background-color: white;
+    margin-bottom: pxTorem(14px);
+    ul{
+      overflow: hidden;
+      li{
+        float: left;
+        width: 33.33%;
+        height: pxTorem(100px);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+          color: $font;
+          text-decoration: none;
+          text-align: center;
+          line-height: 1;
+          div{
+            //background-color: $icon;
+            margin: 0 auto;
+            width: pxTorem(40px);
+            height: pxTorem(40px);
+            //line-height: pxTorem(40px);
+            @include border-radius(50%);
+            //border:2px solid $iconbor;
+            @include box-sizing(border-box);
+            margin-bottom: pxTorem(6px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          i{
+            font-size: pxTorem(25px);
+            color: $icon;
+            @include border-radius(50%);
+
+          }
+        }
+      }
+      .o-listAct{
+        a{
+          color:$red;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+    //清单
+  .o-inventory{
+    background-color: white;
+    padding-top: pxTorem(20px);
+    padding-bottom: pxTorem(20px);
+    margin-bottom: pxTorem(14px);
+    overflow: hidden;
+    .o-intop{
+      padding: 0 pxTorem(20px);
+      @include box-sizing(border-box);
+      background-color: white;
+      span,u{
+        font-style: normal;
+        text-decoration: none;
+        font-size: pxTorem(24px);
+        color: #333;
+      }
+      u{
+        float: right;
+        color: $red;
+      }
+    }
+    //商品
+    .o-things{
+      height: pxTorem(180px);
+      padding: pxTorem(25px) pxTorem(20px);
+      border-bottom: 1px solid $borbot;
+      @include box-sizing(border-box);
+      line-height: pxTorem(78px);
+      background-color: white;
+      .o-img{
+        width: pxTorem(134px);
+        height: pxTorem(125px);
+        float: left;
+        line-height: pxTorem(78px);
+        border: 1px solid $gray;
+        img{
+          width: pxTorem(134px);
+          height: pxTorem(125px);
+        }
+      }
+      .o-del{
+        padding-left: pxTorem(160px);
+        @include box-sizing(border-box);
+        height: 100%;
+        p{
+          line-height: 1;
+          margin-top: pxTorem(23px);
+        }
+        span,u,i{
+          font-style: normal;
+          text-decoration: none;
+          font-size: pxTorem(24px);
+          color: $graytit;
+        }
+        u{
+          float: right;
+          color: $font;
+        }
+        .o-name{
+          u,span{
+            font-size: pxTorem(28px);
+            color: $tit;
+          }
+        }
+      }
+    }
+    //价格
+    .o-price{
+      padding: pxTorem(20px);
+      @include box-sizing(border-box);
+      font-size: pxTorem(24px);
+      color: $font;
+      overflow: hidden;
+      u,i{
+        text-decoration: none;
+        font-style: normal;
+      }
+      i{
+        color: $red;
+      }
+      span{
+        float: right;
+      }
+    }
+    //取消
+    .o-cancel{
+      text-decoration: none;
+      float: right;
+      padding: pxTorem(18px) pxTorem(24px);
+      color: $font;
+      line-height: 1;
+      font-size: pxTorem(24px);
+      border: 1px solid #3a3a3a;
+      margin-right: pxTorem(20px);
+    }
+  }
+
+  //返回顶部
+  .o-back{
+    position: fixed;
+    //background-color: white;
+    font-size: pxTorem(50px);
+    bottom: pxTorem(150px);
+    right: pxTorem(20px);
+    color: #b0b0b0;
+  }
+
+}

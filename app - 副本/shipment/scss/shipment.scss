@@ -1,0 +1,300 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "normalize.scss";
+@import "iconfont.scss";
+
+$col6:#666;
+$font:#3a3a3a;
+$gray:#a4a3a3;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#e5e5e5;
+
+body{
+-webkit-user-select:none;
+-moz-user-select:none; 
+-ms-user-select:none; 
+user-select:none;
+background-color: white;
+}
+
+.shipment{
+  padding-top: pxTorem(64px);
+  @include box-sizing(border-box);
+  background-color: #f2f2f2;
+  //顶部
+  .sm-top{
+    height: pxTorem(64px);
+    line-height: pxTorem(64px);
+    width: 100%;
+    padding: 0 pxTorem(20px);
+    position: fixed;
+    top:0;left: 0;
+    text-align: center;
+    @include box-sizing(border-box);
+    background-color: #f8f8f8;
+    z-index: 10;
+    span{
+      font-size: pxTorem(32px);
+      color: #020202;
+    }
+    .sm-topLeft{
+      float: left;
+      i{
+        font-size: pxTorem(26px);
+        color: $font;
+      }
+    }
+    .sm-topRight{
+      position: absolute;
+      top:50%;
+      transform: translateY(- 50%);
+      right:pxTorem(20px);
+      i{
+        display: block;
+        float: left;
+        margin-left: pxTorem(6px);
+        line-height: 1;
+        width: pxTorem(6px);
+        height: pxTorem(6px);
+        background-color: $font;
+        @include border-radius(50%);
+      }
+      i:nth-child(2){
+        margin-top: - pxTorem(2px);
+        width: pxTorem(10px);
+        height: pxTorem(10px);
+      }
+    }
+  }
+
+  //订单
+  .sm-info{
+    height: pxTorem(186px);
+    width: 100%;
+    background-image: url("../image/fang.png");
+    background-size: cover;
+    padding-left: pxTorem(68px);
+    padding-top: pxTorem(44px);
+    @include box-sizing(border-box);
+    h3{
+      font-size: pxTorem(36px);
+      color: white;
+    }
+    p{
+      color: white;
+      font-size: pxTorem(24px);
+      line-height: pxTorem(35px);
+    }
+  }
+  //个人信息
+  .sm-person{
+    background-color: white;
+    .sm-pos, .sm-delivery{
+      padding: 0 pxTorem(20px);
+      width: 100%;
+      border-bottom: 1px solid $bac;
+      @include box-sizing(border-box);
+      position: relative;
+      .sm-ico{
+        width: pxTorem(50px);
+        float: left;
+        position: absolute;
+        top:50%;
+        transform: translateY(- 50%);
+        i{
+          font-size: pxTorem(24px);
+        }
+      }
+      .sm-del{
+        padding: pxTorem(18px) 0;
+        padding-left: pxTorem(50px);
+        @include box-sizing(border-box);
+        height: 100%;
+        span,i,u,em{
+          font-style: normal;
+          text-decoration: none;
+          font-size: pxTorem(24px);
+          color: #333;
+          line-height: 1;
+        }
+        u{
+          float: right;
+        }
+        p{
+          font-size: pxTorem(24px);
+          color: #333;
+          line-height: 1;
+          margin-top: pxTorem(14px);
+
+          i{
+            line-height: pxTorem(30px);
+          }
+        }
+      }
+    }
+  }
+
+  //清单
+  .sm-inventory{
+    margin-top: pxTorem(14px);
+    background-color: white;
+    .sm-intop{
+      height: pxTorem(78px);
+      padding: 0 pxTorem(20px);
+      @include box-sizing(border-box);
+      line-height: pxTorem(78px);
+      border-bottom: 1px solid $bac;
+      background-color: white;
+      .sm-ico{
+        width: pxTorem(50px);
+        height: pxTorem(78px);
+        float: left;
+        line-height: pxTorem(78px);
+        i{
+          font-size: pxTorem(24px);
+        }
+      }
+      .sm-del{
+        padding-left: pxTorem(50px);
+        @include box-sizing(border-box);
+        height: 100%;
+        line-height: pxTorem(78px);
+        span,u{
+          font-style: normal;
+          text-decoration: none;
+          font-size: pxTorem(24px);
+          color: #333;
+        }
+        u{
+          float: right;
+        }
+      }
+    }
+    //商品
+    .sm-things{
+      height: pxTorem(180px);
+      padding: pxTorem(25px) pxTorem(20px);
+      border-bottom: 1px solid $bac;
+      @include box-sizing(border-box);
+      @include box-sizing(border-box);
+      line-height: pxTorem(78px);
+      border-bottom: 1px solid $bac;
+      background-color: white;
+      .sm-img{
+        width: pxTorem(134px);
+        height: pxTorem(125px);
+        float: left;
+        line-height: pxTorem(78px);
+        border: 1px solid $gray;
+        img{
+          width: pxTorem(134px);
+          height: pxTorem(125px);
+        }
+      }
+      .sm-del{
+        padding-left: pxTorem(160px);
+        @include box-sizing(border-box);
+        height: 100%;
+        p{
+          line-height: 1;
+          margin-top: pxTorem(23px);
+          span{
+            display: inline-block;
+            width: 70%;
+            @include ell;
+          }
+        }
+        span,u,i{
+          font-style: normal;
+          text-decoration: none;
+          font-size: pxTorem(24px);
+          color: gray;
+        }
+        u{
+          float: right;
+        }
+        .sm-name{
+          u,span{
+            font-size: pxTorem(28px);
+            color: $font;
+          }
+        }
+      }
+    }
+    //支付
+    .sm-pay{
+      height: pxTorem(60px);
+      padding:0 pxTorem(20px);
+      line-height: pxTorem(60px);
+      border-bottom: 1px solid $bac;
+      font-size: pxTorem(24px);
+      color: $font;
+      @include box-sizing(border-box);
+    }
+    //减免支付
+    .sm-price{
+      padding:pxTorem(20px);
+      @include box-sizing(border-box);
+      p{
+        font-size: pxTorem(24px);
+        color: $font;
+        margin-bottom: pxTorem(20px);
+        span,em{
+          float: right;
+          font-style: normal;
+          text-decoration: none;
+        }
+        em{
+          color: $red;
+        }
+      }
+      p:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  //取消
+  .sm-cancel{
+    margin-top: pxTorem(14px);
+    overflow: hidden;
+    padding-bottom: pxTorem(20px);
+    background-color: white;
+    @include box-sizing(border-box);
+    .sm-time{
+      padding: 0 pxTorem(20px);
+      height: pxTorem(60px);
+      margin-top: 0;
+      line-height: pxTorem(60px);
+      border-bottom: 1px solid $bac;
+      font-size: pxTorem(24px);
+      color: $font;
+      @include box-sizing(border-box);
+    }
+    div{
+      overflow: hidden;
+      margin-top: pxTorem(20px);
+      padding-right: pxTorem(20px);
+      @include box-sizing(border-box);
+      a{
+        display: block;
+        float: right;
+        color: $font;
+        font-size: pxTorem(24px);
+        border: 1px solid #898989;
+        padding:pxTorem(18px) pxTorem(20px);
+      }
+    }
+    i{
+      display: block;
+      font-size: pxTorem(80px);
+      float: right;
+      margin-top: pxTorem(50px);
+      margin-right: pxTorem(20px);
+    }
+  }
+}

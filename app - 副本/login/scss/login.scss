@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "normalize.scss";
+@import "iconfont.scss";
+
+$col6:#666;
+$font:#3a3a3a;
+$gray:#a4a3a3;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#e5e5e5;
+
+body{
+-webkit-user-select:none;
+-moz-user-select:none; 
+-ms-user-select:none; 
+user-select:none;
+background-color: white;
+}
+
+.login{
+  height: 100%;
+  .l-bacImg{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left:0;top:0;
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  a{
+    position: absolute;
+    z-index: 10;
+    bottom: pxTorem(330px);
+    left: 50%;
+    transform: translateX(- 50%);
+    display: block;
+    width: pxTorem(423px);
+    height: pxTorem(80px);
+    line-height: pxTorem(80px);
+    font-size: pxTorem(26px);
+    color: $font;
+    text-align: center;
+    background-color: white;
+    @include border-radius(10px);
+    i{
+      font-size: pxTorem(26px);
+      margin-right: pxTorem(20px);
+      color: green;
+    }
+  }
+  p{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(- 50%);
+    bottom: pxTorem(160px);
+    color: white;
+    font-size: pxTorem(24px);
+  }
+}

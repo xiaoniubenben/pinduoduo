@@ -1,0 +1,370 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "normalize.scss";
+@import "iconfont.scss";
+
+$col6:#666;
+$font:#3a3a3a;
+$gray:#a4a3a3;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#e5e5e5;
+
+body{
+-webkit-user-select:none;
+-moz-user-select:none; 
+-ms-user-select:none; 
+user-select:none;
+background-color: #f2f2f2;
+}
+
+.index{
+  padding-bottom: pxTorem(130px);
+  background-color: #f2f2f2;
+  @include box-sizing(border-box);
+  //顶部
+  .top{
+    position: fixed;
+    top:0;
+    left:0;
+    height: pxTorem(64px);
+    line-height: pxTorem(64px);
+    width: 100%;
+    padding: 0 pxTorem(20px);
+    border-bottom: 1px solid #f8f8f8;
+    @include box-sizing(border-box);
+    background-color: white;
+    z-index: 10;
+    .topLeft{
+      float: left;
+      font-size: pxTorem(24px);
+      color: $col6;
+      position: relative;
+      padding-right: pxTorem(26px);
+      i{
+        font-size: pxTorem(24px);
+        //color: $font;
+      }
+    }
+    .topRight{
+      position: absolute;
+      top:50%;
+      transform: translateY(- 50%);
+      right:pxTorem(20px);
+      i{
+        display: block;
+        float: left;
+        margin-left: pxTorem(6px);
+        line-height: 1;
+        width: pxTorem(6px);
+        height: pxTorem(6px);
+        background-color: $font;
+        @include border-radius(50%);
+      }
+      i:nth-child(2){
+        margin-top: - pxTorem(2px);
+        width: pxTorem(10px);
+        height: pxTorem(10px);
+      }
+    }
+  }
+
+  //轮播图
+  .shuffling{
+    padding-top: pxTorem(64px);
+    @include box-sizing(border-box);
+    .swiperCon{
+      width: 100%;
+      height: pxTorem(310px);
+      img{
+        display: block;
+        width: 100%;
+        height: pxTorem(310px);
+      }
+    }
+    //更改分页骑的样式
+    .swiper-container-horizontal .swiper-pagination-bullets .swiper-pagination-bullet{
+      width: pxTorem(12px);
+      height: pxTorem(12px);
+      background: white;
+      @include border-radius(50%);
+      opacity:1;
+    }
+    .swiper-container-horizontal .swiper-pagination-bullets .swiper-pagination-bullet-active{
+      width: pxTorem(12px);
+      height: pxTorem(12px);
+      background-color: $red;
+      @include border-radius(50%);
+    }
+  }
+
+  //tab栏
+  .tab{
+    padding-bottom:pxTorem(14px);
+    @include box-sizing(border-box);
+    background-color: #f2f2f2;
+
+    ul{
+      display: flex;
+      padding:pxTorem(20px);
+      //padding-bottom: 0;
+      width: 100%;
+      background-color: white;
+      @include box-sizing(border-box);
+      li{
+        flex: 1;
+        width: pxTorem(212px);
+        height: pxTorem(48px);
+        line-height: pxTorem(48px);
+        border: 1px solid #eaeaea;
+        text-align: center;
+        @include border-radius(pxTorem(6px));
+        @include box-sizing(border-box);
+        margin-right: pxTorem(32px);
+        box-shadow: 5px 5px 10px #eaeaea;
+        vertical-align: middle;
+        a{
+          color: $font;
+          font-size: pxTorem(24px);
+          vertical-align: middle;
+          .tabImg{
+            display: inline-block;
+            width: pxTorem(33px);
+            height: pxTorem(27px);
+            margin-right: pxTorem(10px);
+            margin-top: - pxTorem(6px);
+            vertical-align: middle;
+          }
+        }
+      }
+      .liActive{
+        border-color: $red;
+      }
+      li:last-child{
+        margin: 0;
+      }
+    }
+    .tabConts{
+      background-color: $bac;
+      display: none;
+    }
+    .tabActive{
+      display: block;
+    }
+    .tabCont{
+      margin-top: pxTorem(14px);
+      background-color: white;
+      padding: pxTorem(20px);
+      padding-bottom: pxTorem(60px);
+      @include box-sizing(border-box);
+      .pic{
+        position: relative;
+        img{
+          width: 100%;
+          height: pxTorem(450px);
+        }
+        span{
+          padding: 0 pxTorem(18px);
+          display: block;
+          position: absolute;
+          height: pxTorem(40px);
+          line-height: pxTorem(40px);
+          background-color: black;
+          color: white;
+          left:0;
+          top:pxTorem(10px);
+        }
+      }
+      .details{
+        h3{
+          color: $font;
+          font-size: pxTorem(28px);
+          line-height: pxTorem(60px);
+        }
+        .info{
+          display: inline-block;
+          font-size: pxTorem(24px);
+          color: $gray;
+          margin-right: pxTorem(44px);
+          margin-bottom: pxTorem(12px);
+          i{
+            font-size: pxTorem(24px);
+            margin-right: pxTorem(6px);
+          }
+          .icon-pinzhong{
+            font-size: pxTorem(28px);
+          }
+        }
+        .time{
+          position: relative;
+          p{
+            font-size: pxTorem(24px);
+            color: $red;
+            line-height: 1;
+            margin-top: pxTorem(12px);
+          }
+          a{
+            color: white;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: $red;
+            display: inline-block;
+            height: pxTorem(52px);
+            line-height: pxTorem(52px);
+            padding: 0 pxTorem(22px);
+            @include border-radius(6px);
+          }
+        }
+      }
+      .progress{
+        height: pxTorem(10px);
+        background: radial-gradient( #8aaac1,#bccddb);
+        overflow: visible;
+        @include border-radius(pxTorem(10px));
+        margin-top: pxTorem(12px);
+        position: relative;
+        .progress-bar{
+          border-radius: pxTorem(10px);
+          position: absolute;
+          top:0;
+          left:0;
+          width: 60%;
+          height: 100%;
+          @include border-radius(pxTorem(10px));
+          background-image:linear-gradient(-45deg, #fec08e 30%,#fb6a10 31%,#fb6a10 58%,#fec08e 59%);
+          background-size: pxTorem(20px) pxTorem(10px);
+        }
+        .proValue{
+          position: absolute;
+          top:pxTorem(24px);
+          padding:pxTorem(2px) pxTorem(6px);
+          border: 1px solid $gray;
+          font-style: normal;
+          @include border-radius(6px);
+          color: #fb6a10;
+          font-size: pxTorem(16px);
+          u{
+            text-decoration: none;
+          }
+          span{
+            position: absolute;
+            width:0;
+            height: 0;
+            border-right:pxTorem(6px) solid transparent;
+            border-left:pxTorem(6px) solid transparent;
+            border-bottom: pxTorem(10px) solid $gray;
+            float: right;
+            top: pxTorem(- 9px);
+            left:pxTorem(4px);
+          }
+          em{
+            position: absolute;
+            width:0;
+            height: 0;
+            border-right:pxTorem(6px) solid transparent;
+            border-left:pxTorem(6px) solid transparent;
+            border-bottom: pxTorem(10px) solid white;
+            float: right;
+            top: pxTorem(1px);
+            right:pxTorem(- 6px);
+          }
+        }
+        .price2{
+          left: 50%;
+        }
+        .price3{
+          left: 70%;
+        }
+      }
+    }
+    .tabCont:first-child{
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+
+  //返回顶部
+  .backTop{
+    position: fixed;
+    right:pxTorem(20px);
+    bottom: pxTorem(200px);
+    i{
+      font-size: pxTorem(60px);
+      color: #b0b0b0;
+    }
+  }
+
+  //底部
+  .footer{
+    position: fixed;
+    padding: 0 pxTorem(20px);
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: pxTorem(130px);
+    background-color: white;
+    @include box-sizing(border-box);
+    ul{
+      display: flex;
+      height: 100%;
+      li{
+        flex: 1;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+          text-align: center;
+          color: $gray;
+          font-size: pxTorem(24px);
+        }
+        i{
+          display: block;
+          font-size: pxTorem(40px);
+          margin-bottom: pxTorem(4px);
+        }
+        .icon-_home-f{
+          font-size: pxTorem(45px);
+          margin-bottom: pxTorem(0px);
+        }
+
+      }
+      li:first-child{
+        a{
+          color: $red;
+          i{
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  //评论
+  .arguments{
+    width: pxTorem(476px);
+    height: pxTorem(170px);
+    position: fixed;
+    left:pxTorem(20px);
+    bottom:30%;
+    padding: pxTorem(25px);
+    background-color: rgba(0,0,0,.3);
+    @include border-radius(10px);
+    @include box-sizing(border-box);
+    p{
+      font-size: pxTorem(24px);
+      line-height: pxTorem(38px);
+    }
+    i{
+      font-style: normal;
+      color: white;
+    }
+    span{
+      color: #ffc80b;
+    }
+  }
+}

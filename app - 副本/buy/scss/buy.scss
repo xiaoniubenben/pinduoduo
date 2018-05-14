@@ -1,0 +1,305 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "normalize.scss";
+@import "iconfont.scss";
+
+$col6:#666;
+$font:#3a3a3a;
+$gray:#a4a3a3;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#e5e5e5;
+
+body{
+-webkit-user-select:none;
+-moz-user-select:none; 
+-ms-user-select:none; 
+user-select:none;
+background-color: white;
+}
+
+.buy{
+  padding-top: pxTorem(64px);
+  //height: 100%;
+  padding-bottom: pxTorem(70px);
+  @include box-sizing(border-box);
+  //background-color: #f8f8f8;
+  //顶部
+  .b-top{
+    height: pxTorem(64px);
+    line-height: pxTorem(64px);
+    width: 100%;
+    padding: 0 pxTorem(20px);
+    position: fixed;
+    top:0;left: 0;
+    text-align: center;
+    @include box-sizing(border-box);
+    background-color: #f8f8f8;
+    z-index: 10;
+    span{
+      font-size: pxTorem(32px);
+      color: #020202;
+    }
+    .b-topLeft{
+      float: left;
+      i{
+        font-size: pxTorem(26px);
+        color: $font;
+      }
+    }
+    .b-topRight{
+      position: absolute;
+      top:50%;
+      transform: translateY(- 50%);
+      right:pxTorem(20px);
+      i{
+        display: block;
+        float: left;
+        margin-left: pxTorem(6px);
+        line-height: 1;
+        width: pxTorem(6px);
+        height: pxTorem(6px);
+        background-color: $font;
+        @include border-radius(50%);
+      }
+      i:nth-child(2){
+        margin-top: - pxTorem(2px);
+        width: pxTorem(10px);
+        height: pxTorem(10px);
+      }
+    }
+  }
+
+  //个人信息
+  .b-person{
+    background-color: white;
+    .b-pos{
+      padding: 0 pxTorem(20px);
+      width: 100%;
+      @include box-sizing(border-box);
+      position: relative;
+      .b-ico{
+        width: pxTorem(50px);
+        position: absolute;
+        top:50%;
+        transform: translateY(- 50%);
+        float: left;
+        i{
+          font-size: pxTorem(24px);
+        }
+      }
+      .b-del{
+        padding: pxTorem(18px) 0;
+        padding-left: pxTorem(50px);
+        @include box-sizing(border-box);
+        position: relative;
+        div{
+          width: 80%;
+          span,u,em{
+            font-style: normal;
+            text-decoration: none;
+            font-size: pxTorem(28px);
+            color: #333;
+            line-height: 1;
+          }
+          span{
+            margin-right: pxTorem(10px);
+          }
+          p{
+            font-size: pxTorem(24px);
+            color: #333;
+            margin-top: pxTorem(14px);
+            line-height: pxTorem(38px);
+          }
+        }
+        i{
+          position: absolute;
+          font-size: pxTorem(26px);
+          top:50%;
+          right: 0;
+          transform: translateY(- 50%);
+        }
+      }
+    }
+  }
+
+  //灰色背景
+  .b-bac{
+    width: 100%;
+    height: pxTorem(14px);
+    background-color: #f2f2f2;
+  }
+
+  //清单
+  .b-inventory{
+    //margin-top: pxTorem(14px);
+    background-color: white;
+    padding-bottom: pxTorem(20px);
+    //商品
+    .b-things{
+      height: pxTorem(180px);
+      padding: pxTorem(25px) pxTorem(20px);
+      @include box-sizing(border-box);
+      background-color: white;
+      position: relative;
+      .b-img{
+        width: pxTorem(134px);
+        height: pxTorem(125px);
+        float: left;
+        line-height: pxTorem(78px);
+        border: 1px solid $gray;
+        img{
+          width: pxTorem(134px);
+          height: pxTorem(125px);
+        }
+      }
+      .b-del{
+        padding-left: pxTorem(160px);
+        @include box-sizing(border-box);
+        height: 100%;
+        p{
+          line-height: 1;
+          margin-top: pxTorem(23px);
+          color: $gray;
+        }
+        .b-name{
+          color: $font;
+          font-size: pxTorem(28px);
+          width: 80%;
+          @include ell();
+        }
+      }
+      u{
+        font-style: normal;
+        position: absolute;
+        top:50%;
+        transform: translateY(- 50%);
+        text-decoration: none;
+        font-size: pxTorem(32px);
+        color: $red;
+        right:pxTorem(20px);
+      }
+    }
+    //数量
+    .b-num{
+      padding: 0 pxTorem(20px);
+      @include box-sizing(border-box);
+      div{
+        float: right;
+        p{
+          line-height: pxTorem(35px);
+          color: $font;
+        }
+        a,span{
+          float: left;
+          display: block;
+          width: pxTorem(50px);
+          height: pxTorem(35px);
+          text-align: center;
+          line-height: pxTorem(35px);
+          background-color: #f8f8f8;
+          margin-left: pxTorem(10px);
+        }
+        span{
+          width: pxTorem(65px);
+        }
+        .b-down{
+          color: #bcbbbb;
+        }
+        .b-add{
+          color: $font;
+        }
+      }
+    }
+  }
+
+  //优惠券
+  .b-coupon{
+    //margin-top: pxTorem(20px);
+    height: pxTorem(80px);
+    line-height: pxTorem(80px);
+    background-color: white;
+    padding: 0 pxTorem(20px);
+    @include box-sizing(border-box);
+    i{
+      font-size: pxTorem(24px);
+    }
+    .icon-dianping{
+      margin-right: pxTorem(10px);
+    }
+    .icon-jiantou{
+      float: right;
+    }
+  }
+    //支付方式
+  .b-pay{
+    //margin-top: pxTorem(20px);
+    padding: 0 pxTorem(20px);
+    overflow: hidden;
+    background-color: white;
+    @include box-sizing(border-box);
+    p{
+      height: pxTorem(80px);
+      line-height: pxTorem(80px);
+      background-color: white;
+      @include box-sizing(border-box);
+      border-bottom: 1px solid #e1e1e1;
+      i{
+        font-size: pxTorem(24px);
+        margin-right: pxTorem(20px);
+      }
+    }
+    div{
+      display: flex;
+      a{
+        flex: 1;
+        width: pxTorem(256px);
+        height: pxTorem(68px);
+        border:1px solid #898989;
+        margin:pxTorem(34px) pxTorem(52px);
+        text-align: center;
+        line-height: pxTorem(68px);
+        color: $font;
+        font-size: pxTorem(28px);
+        i{
+          font-size: pxTorem(28px);
+          margin-right: pxTorem(15px);
+        }
+      }
+    }
+  }
+
+  //付款
+  .b-buy{
+    height: pxTorem(70px);
+    line-height: pxTorem(70px);
+    width: 100%;
+    position: fixed;
+    bottom:0;left:0;
+    background-color: white;
+    span{
+      float: right;
+      font-size: pxTorem(22px);
+      color: $font;
+      i{
+        font-style: normal;
+        font-size: pxTorem(36px);
+        color: $red;
+      }
+    }
+    button{
+      float: right;
+      width: pxTorem(200px);
+      height: pxTorem(70px);
+      background-color: $red;
+      line-height: pxTorem(70px);
+      text-align: center;
+      color: white;
+      font-size: pxTorem(28px);
+      margin-left: pxTorem(30px);
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+@import "variables.scss";
+@import "normalize.scss";
+@import "core.scss";
+@import "mixins.scss";
+@import "iconfont.scss";
+@import "iconfont1.scss";
+
+$col6:#666;
+$font:#3a3a3a;
+$gray:#a4a3a3;
+$red:#d7140d;
+$org:#fc8328;
+$bac:#f8f8f8;
+
+body{
+-webkit-user-select:none;
+-moz-user-select:none; 
+-ms-user-select:none; 
+user-select:none;
+background-color: white;
+background: url("../image/login.PNG") center center no-repeat;
+background-size: cover;
+}
+
+.login{
+  position: relative;
+  //padding: 0 20%;
+  //@include box-sizing(border-box);
+  height: 100%;
+  //.l-bacImg{
+  //  height: 100%;
+  //  width: 100%;
+  //  position: fixed;
+  //  left:0;top:0;
+  //  img{
+  //    display: block;
+  //    width: 100%;
+  //    height: 100%;
+  //  }
+  //}
+  //.l-btn{
+  //  position: relative;
+  //  width: 100%;
+
+  //  position: absolute;
+  //  display: flex;
+  //  z-index: 10;
+  //  width: 100%;
+  //  justify-content: center;
+  //  //align-items: center;
+  //  bottom: pxTorem(0px);
+  //  height: 50%;
+
+  //  text-align: center;
+    //overflow: hidden;
+    button{
+      position: absolute;
+      width: 60%;
+      height: pxTorem(80px);
+      line-height: pxTorem(80px);
+      font-size: pxTorem(26px);
+      bottom: pxTorem(350px);
+      left: 20%;
+      color: $font;
+      text-align: center;
+      background-color: white;
+      @include border-radius(10px);
+      @include box-sizing(border-box);
+      vertical-align: middle;
+      i{
+        font-size: pxTorem(40px);
+        margin-right: pxTorem(20px);
+        color: green;
+        vertical-align: middle;
+      }
+    }
+  //}
+    p{
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      //left: 50%;
+      //margin-left: - 50%;
+      //z-index: 10;
+      //left: 50%;
+      //transform: translateX(- 50%);
+      bottom: pxTorem(160px);
+      color: white;
+      font-size: pxTorem(24px);
+    }
+
+
+}
